@@ -9,12 +9,17 @@
   /* ---------- theme ---------- */
   var THEME_KEY = "personal-site-theme";
   var themeBtn = document.getElementById("themeBtn");
+  var themeHint = document.getElementById("themeHint");
+  var themeHintText = document.getElementById("themeHintText");
 
   function applyTheme(theme) {
     root.setAttribute("data-theme", theme);
     var meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.setAttribute("content", theme === "light" ? "#e9e6e0" : "#0f0f11");
     if (themeBtn) themeBtn.setAttribute("aria-pressed", theme === "light" ? "true" : "false");
+    if (themeHintText) {
+      themeHintText.textContent = theme === "light" ? "喵，点我换夜" : "喵，点我换日";
+    }
   }
 
   var saved = null;
@@ -29,6 +34,34 @@
       applyTheme(next);
       try {
         localStorage.setItem(THEME_KEY, next);
+      } catch (e) {}
+    });
+  }
+
+  var hintDismissed = false;
+  var hintSeen = false;
+  try {
+    hintSeen = sessionStorage.getItem("theme-hint-seen") === "1";
+  } catch (e) {}
+
+  if (themeHint && !hintSeen && !reduce) {
+    window.setTimeout(function () {
+      if (!hintDismissed) themeHint.classList.add("show");
+    }, 1200);
+    window.setTimeout(function () {
+      if (!hintDismissed) themeHint.classList.remove("show");
+    }, 6200);
+  }
+
+  if (themeBtn && themeHint) {
+    themeHint.addEventListener("click", function () {
+      themeBtn.click();
+    });
+    themeBtn.addEventListener("click", function () {
+      hintDismissed = true;
+      themeHint.classList.remove("show");
+      try {
+        sessionStorage.setItem("theme-hint-seen", "1");
       } catch (e) {}
     });
   }

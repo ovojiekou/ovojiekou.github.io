@@ -115,10 +115,16 @@
       <a href="#likes">在听</a>
       <a href="#contact">联系</a>
     </nav>
-    <button class="theme" id="themeBtn" type="button" aria-label="切换明暗主题" aria-pressed="false">
-      <svg class="i t-sun"><use href="#i-sun"/></svg>
-      <svg class="i t-moon"><use href="#i-moon"/></svg>
-    </button>
+    <div class="theme-wrap">
+      <span class="theme-hint" id="themeHint" aria-hidden="true">
+        <svg class="paw" aria-hidden="true"><use href="#i-paw"/></svg>
+        <span id="themeHintText">喵，点我换夜</span>
+      </span>
+      <button class="theme" id="themeBtn" type="button" aria-label="切换明暗主题" aria-pressed="false">
+        <svg class="i t-sun"><use href="#i-sun"/></svg>
+        <svg class="i t-moon"><use href="#i-moon"/></svg>
+      </button>
+    </div>
   </div>
 </header>
 

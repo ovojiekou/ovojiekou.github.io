@@ -275,6 +275,67 @@ button { font: inherit; color: inherit; }
 [data-theme="light"] .theme .t-sun { display: block; }
 [data-theme="light"] .theme .t-moon { display: none; }
 
+.theme-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.theme-hint {
+  position: absolute;
+  top: calc(100% + 13px);
+  right: 0;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  background: var(--nav-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  color: var(--dim);
+  opacity: 0;
+  transform: translateY(-4px);
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  box-shadow: 0 14px 34px -26px rgba(0, 0, 0, 0.65);
+}
+.theme-hint::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  right: 12px;
+  width: 7px;
+  height: 7px;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  background: var(--nav-bg);
+  transform: rotate(45deg);
+}
+.theme-hint .paw {
+  width: 12px;
+  height: 12px;
+  color: var(--maple);
+  animation: paw-tap 1.9s ease-in-out infinite;
+  transform-origin: 50% 80%;
+}
+.theme-hint.show,
+.theme-wrap:hover .theme-hint,
+.theme-wrap:focus-within .theme-hint {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  cursor: pointer;
+}
+@keyframes paw-tap {
+  0%, 100% { transform: rotate(-8deg) translateY(0); }
+  50% { transform: rotate(4deg) translateY(1px); }
+}
+
 /* ============================================================
    Hero
    ============================================================ */
@@ -1495,6 +1556,7 @@ a.c-value:hover { color: var(--brass); }
   .nav-links a { padding: 6px 5px; font-size: 10.5px; letter-spacing: 0.02em; }
   .nav-links a::after { left: 5px; right: 5px; }
   .theme { width: 30px; height: 30px; }
+  .theme-hint { top: calc(100% + 10px); padding: 6px 8px; font-size: 9px; }
   .name { font-size: clamp(3rem, 15vw, 4.2rem); }
   .name-wordmark { font-size: clamp(2.4rem, 11vw, 3.4rem); }
   .meta { grid-template-columns: 1fr 1fr; gap: 18px; }
