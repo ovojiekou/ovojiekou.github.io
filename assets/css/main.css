@@ -1300,6 +1300,12 @@ a.c-value:hover { color: var(--brass); }
   .t-name { font-size: 14.5px; }
 }
 
+@media (max-width: 480px) {
+  .brand span:last-child { display: none; }
+  .nav-links a { padding: 6px 8px; font-size: 11px; }
+  .nav-links a::after { left: 8px; right: 8px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
