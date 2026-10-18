@@ -19,6 +19,7 @@
   --line: rgba(242, 240, 236, 0.12);
   --line-2: rgba(242, 240, 236, 0.22);
   --brass: #b99b73;
+  --maple: #c08a5a;
   --board: #17171a;
   --nav-bg: rgba(15, 15, 17, 0.72);
   --grain: 0.05;
@@ -33,6 +34,7 @@
   --line: rgba(23, 22, 20, 0.14);
   --line-2: rgba(23, 22, 20, 0.3);
   --brass: #8a6b3f;
+  --maple: #b06a3c;
   --board: #d8d3ca;
   --nav-bg: rgba(233, 230, 224, 0.78);
   --grain: 0.03;
@@ -292,6 +294,59 @@ button { font: inherit; color: inherit; }
     rgba(255, 255, 255, 0.045),
     transparent 70%
   );
+}
+
+.leaves {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.leaf {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  color: var(--maple);
+  opacity: 0;
+  animation: leaf-fall 20s linear infinite;
+}
+.leaf-a {
+  left: 1.5%;
+  top: -3%;
+  animation-delay: -4s;
+}
+.leaf-b {
+  left: 61%;
+  top: -8%;
+  width: 26px;
+  height: 26px;
+  animation-delay: -12s;
+  animation-duration: 26s;
+}
+.leaf-c {
+  right: 5%;
+  top: 4%;
+  width: 34px;
+  height: 34px;
+  animation-delay: -19s;
+  animation-duration: 30s;
+}
+@keyframes leaf-fall {
+  0% {
+    transform: translate3d(0, -30px, 0) rotate(0deg);
+    opacity: 0;
+  }
+  12% { opacity: 0.62; }
+  50% {
+    transform: translate3d(26px, 50vh, 0) rotate(130deg);
+    opacity: 0.55;
+  }
+  88% { opacity: 0.38; }
+  100% {
+    transform: translate3d(-16px, 104vh, 0) rotate(300deg);
+    opacity: 0;
+  }
 }
 
 /* engraved horizon: a family of hairline curves */
@@ -1313,6 +1368,13 @@ a.c-value:hover { color: var(--brass); }
   height: 12px;
   opacity: 0.8;
 }
+.maple-mini {
+  width: 10px;
+  height: 10px;
+  flex: none;
+  color: var(--maple);
+  opacity: 0.8;
+}
 
 /* ---- utility controls ---- */
 .totop {
@@ -1440,6 +1502,10 @@ a.c-value:hover { color: var(--brass); }
   .print { max-width: 250px; }
   .print-wrap { max-width: 250px; }
   .hero-cat { right: -46px; bottom: -48px; width: 72px; height: 72px; }
+  .leaf { width: 24px; height: 24px; }
+  .leaf-a { left: 3%; }
+  .leaf-b { display: none; }
+  .leaf-c { right: 2%; }
   .print-back { transform: translate(10px, 10px); }
   .print-side { display: none; }
   .big-mail { font-size: clamp(1.15rem, 6vw, 1.6rem); }
