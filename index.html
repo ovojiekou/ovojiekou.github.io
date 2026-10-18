@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script>
+  document.documentElement.classList.add("js");
+  try {
+    var t = localStorage.getItem("personal-site-theme") || "light";
+    if (t) document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+  setTimeout(function () {
+    if (!document.documentElement.dataset.ready) {
+      document.querySelectorAll("[data-reveal]").forEach(function (el) {
+        el.classList.add("in");
+      });
+    }
+  }, 2500);
+</script>
+<title>ovojiekou · 个人档案 2026</title>
+<meta name="description" content="ovojiekou 的个人档案：在读计算机，2026 年 8 月开始学 C 语言。" />
+<meta name="theme-color" content="#e9e6e0" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ovojiekou · 个人档案 2026" />
+<meta property="og:description" content="在读计算机，2026 年 8 月开始学 C 语言。" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0b'/%3E%3Crect x='15' y='15' width='34' height='34' fill='none' stroke='%23ece9e2' stroke-width='2'/%3E%3Ccircle cx='32' cy='32' r='4.5' fill='%23ece9e2'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+
+<a class="skip" href="#main">跳到正文</a>
+<div class="progress" aria-hidden="true"><i></i></div>
+<div class="frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6.5 18.5 12 13 17.5"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M7 17 17 7M8.5 7H17v8.5"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="1"/><path d="M15 6V4H4v11h2"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.2 5.2l1.7 1.7M17.1 17.1l1.7 1.7M5.2 18.8l1.7-1.7M17.1 6.9l1.7-1.7"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.3A8.3 8.3 0 0 1 9.7 4a8.6 8.6 0 1 0 10.3 10.3Z"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6.5 10.5 12 5l5.5 5.5"/></symbol>
+  <symbol id="i-rosette" viewBox="0 0 120 120">
+    <g fill="none" stroke="currentColor" stroke-width="0.9">
+      <ellipse cx="60" cy="60" rx="45" ry="14" transform="rotate(0 60 60)"/>
+      <ellipse cx="60" cy="60" rx="45" ry="14" transform="rotate(20 60 60)"/>
+      <ellipse cx="60" cy="60" rx="45" ry="14" transform="rotate(40 60 60)"/>
+      <ellipse cx="60" cy="60" rx="45" ry="14" transform="rotate(60 60 60)"/>
+      <ellipse cx="60" cy="60" rx="45" ry="14" transform="rotate(80 60 60)"/>
+      <ellipse cx="60" cy="60" rx="45" ry="14" transform="rotate(100 60 60)"/>
+      <ellipse cx="60" cy="60" rx="45" ry="14" transform="rotate(120 60 60)"/>
+      <ellipse cx="60" cy="60" rx="45" ry="14" transform="rotate(140 60 60)"/>
+      <ellipse cx="60" cy="60" rx="45" ry="14" transform="rotate(160 60 60)"/>
+      <ellipse cx="60" cy="60" rx="45" ry="14" transform="rotate(180 60 60)"/>
+      <ellipse cx="60" cy="60" rx="45" ry="14" transform="rotate(200 60 60)"/>
+      <ellipse cx="60" cy="60" rx="45" ry="14" transform="rotate(220 60 60)"/>
+      <ellipse cx="60" cy="60" rx="45" ry="14" transform="rotate(240 60 60)"/>
+      <ellipse cx="60" cy="60" rx="45" ry="14" transform="rotate(260 60 60)"/>
+      <ellipse cx="60" cy="60" rx="45" ry="14" transform="rotate(280 60 60)"/>
+      <ellipse cx="60" cy="60" rx="45" ry="14" transform="rotate(300 60 60)"/>
+      <ellipse cx="60" cy="60" rx="45" ry="14" transform="rotate(320 60 60)"/>
+      <ellipse cx="60" cy="60" rx="45" ry="14" transform="rotate(340 60 60)"/>
+    </g>
+    <circle cx="60" cy="60" r="10" fill="none" stroke="currentColor" stroke-width="0.9"/>
+    <circle cx="60" cy="60" r="2.4" fill="currentColor"/>
+  </symbol>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="nav-inner wrap">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>ovojiekou</span>
+    </a>
+    <nav class="nav-links" aria-label="页面导航">
+      <a href="#now">现在</a>
+      <a href="#about">关于</a>
+      <a href="#road">轨迹</a>
+      <a href="#likes">在听</a>
+      <a href="#contact">联系</a>
+    </nav>
+    <button class="theme" id="themeBtn" type="button" aria-label="切换明暗主题" aria-pressed="false">
+      <svg class="i t-sun"><use href="#i-sun"/></svg>
+      <svg class="i t-moon"><use href="#i-moon"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" id="top">
+  <div class="hero-light" aria-hidden="true"></div>
+  <div class="horizon" aria-hidden="true">
+    <svg class="horizon-svg" viewBox="0 0 1440 460" preserveAspectRatio="xMidYMax slice" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"><path d="M-60 34.0C327 14.2 680 55.2 900 26.9S1122 48.2 1500 36.8"/><path d="M-60 50.6C280 33.4 676 78.7 900 47.5S1158 70.9 1500 49.0"/><path d="M-60 67.2C252 52.0 714 100.1 900 66.9S1150 91.8 1500 62.5"/><path d="M-60 83.8C273 66.7 664 120.7 900 83.5S1147 111.4 1500 78.5"/><path d="M-60 100.4C322 82.5 700 134.7 900 98.7S1126 125.7 1500 96.7"/><path d="M-60 117.0C251 91.3 704 151.6 900 110.0S1210 141.2 1500 117.7"/><path d="M-60 133.6C340 103.3 678 163.1 900 121.9S1196 152.8 1500 139.1"/><path d="M-60 150.2C264 111.1 672 180.0 900 132.5S1174 168.1 1500 160.8"/><path d="M-60 166.8C282 128.1 698 190.5 900 147.5S1159 179.7 1500 179.7"/><path d="M-60 183.4C327 141.8 760 209.8 900 162.9S1120 198.1 1500 196.8"/><path d="M-60 200.0C300 163.1 741 226.4 900 182.7S1193 215.5 1500 210.7"/><path d="M-60 216.6C323 183.0 711 248.3 900 203.3S1203 237.0 1500 223.2"/><path d="M-60 233.2C323 203.9 689 270.4 900 224.5S1140 259.0 1500 235.0"/><path d="M-60 249.8C337 219.3 702 296.7 900 243.3S1158 283.3 1500 248.3"/><path d="M-60 266.4C321 239.6 640 313.6 900 262.5S1175 300.8 1500 262.6"/><path d="M-60 283.0C330 254.7 725 330.5 900 278.2S1151 317.5 1500 279.9"/><path d="M-60 299.6C268 273.2 720 338.8 900 293.6S1188 327.5 1500 298.9"/><path d="M-60 316.2C292 285.7 683 350.3 900 305.7S1205 339.1 1500 320.0"/><path d="M-60 332.8C321 299.9 675 359.5 900 318.4S1122 349.3 1500 341.0"/><path d="M-60 349.4C322 310.8 690 374.8 900 330.7S1167 363.8 1500 361.5"/><path d="M-60 366.0C323 326.6 659 389.5 900 346.2S1147 378.7 1500 379.3"/><path d="M-60 382.6C288 348.8 696 402.9 900 365.6S1160 393.6 1500 394.0"/><path d="M-60 399.2C281 369.3 668 422.8 900 385.9S1208 413.6 1500 406.9"/><path d="M-60 415.8C261 396.3 660 438.3 900 409.3S1162 431.1 1500 417.9"/><path d="M-60 432.4C318 414.3 723 462.8 900 429.4S1157 454.4 1500 430.4"/><path d="M-60 449.0C314 439.0 663 476.9 900 450.8S1154 470.4 1500 443.3"/></g></svg>
+  </div>
+  <div class="hero-inner wrap">
+    <div class="hero-copy">
+      <p class="kicker" data-reveal><span class="k-line"></span>PERSONAL ARCHIVE — VOL. 01</p>
+      <h1 class="name name-wordmark" data-reveal style="--d:.05s">ovojiekou</h1>
+      <p class="role" data-reveal style="--d:.1s">沈阳 · 计算机专业 · 大一</p>
+      <p class="lede" data-reveal style="--d:.15s">
+        今年 9 月刚进大学，8 月才开始学 C。白天上课，晚上在宿舍跟指针<span class="nw">较劲</span>。
+        这里记我正在学什么，也记一点代码之外的生活。
+      </p>
+      <div class="hero-cta" data-reveal style="--d:.2s">
+        <a class="btn-solid" href="#now">看看我在做什么<svg class="i"><use href="#i-arrow"/></svg></a>
+        <a class="btn-line" href="#contact">怎么找到我</a>
+      </div>
+      <dl class="meta" data-reveal style="--d:.25s">
+        <div><dt>城市</dt><dd>沈阳</dd></div>
+        <div><dt>在学</dt><dd>C 语言</dd></div>
+        <div><dt>状态</dt><dd class="live">刚起步</dd></div>
+      </dl>
+    </div>
+
+    <div class="hero-side" data-reveal style="--d:.12s">
+      <figure class="print">
+        <span class="print-side" aria-hidden="true">INK ON PAPER — 2026</span>
+        <div class="print-back" aria-hidden="true"></div>
+        <div class="print-inner">
+          <div class="print-img">
+            <img src="assets/img/portrait.jpg" alt="黑白墨线肖像" width="1078" height="1080" />
+          </div>
+          <figcaption>
+            <span class="cap-a">INK STUDY</span>
+            <span class="cap-b">纸本 · 墨 · 2026</span>
+          </figcaption>
+        </div>
+      </figure>
+    </div>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true">
+    <span>SCROLL</span>
+    <i></i>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>C — VJUDGE — CSDN — PRACTICE — NOTES —</span>
+    <span>C — VJUDGE — CSDN — PRACTICE — NOTES —</span>
+  </div>
+</div>
+
+<section class="sec" id="now">
+  <div class="wrap">
+    <header class="sec-head">
+      <svg class="orn" aria-hidden="true"><use href="#i-rosette"/></svg>
+      <span class="sec-num" data-reveal>01</span>
+      <div class="sec-title">
+        <p class="sec-kicker" data-reveal style="--d:.05s">NOW</p>
+        <h2 data-reveal style="--d:.08s">手上在敲什么</h2>
+      </div>
+    </header>
+
+    <div class="board">
+    <ul class="rows">
+      <li class="row" data-reveal>
+        <span class="r-num">01</span>
+        <h3>C 语言</h3>
+        <p>从 8 月开始，变量、循环、数组、函数一个个过。指针还没想明白，卡了好几天。</p>
+        <span class="r-tag">正在学</span>
+      </li>
+      <li class="row" data-reveal style="--d:.05s">
+        <span class="r-num">02</span>
+        <h3>vjudge 题单</h3>
+        <p>一些奇妙的小题。做不出来就先放两天，回头再看常常就通了。</p>
+        <span class="r-tag">在刷</span>
+      </li>
+      <li class="row" data-reveal style="--d:.1s">
+        <span class="r-num">03</span>
+        <h3>CSDN 上的小博客</h3>
+        <p>把学 C 语言时想明白的东西写下来，主要是给自己看的笔记。</p>
+        <span class="r-tag">偶尔更新</span>
+      </li>
+    </ul>
+    </div>
+
+    <div class="figure-row" data-reveal style="--d:.2s">
+      <div class="fig"><b>01</b><span>在学的语言</span></div>
+      <div class="fig"><b>00</b><span>在推进的项目</span></div>
+      <div class="fig"><b>01</b><span>在写的博客</span></div>
+      <div class="fig"><b class="inf">∞</b><span>想尝试的事</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="about">
+  <svg class="arcs" viewBox="0 0 520 520" aria-hidden="true" focusable="false">
+    <g fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke">
+      <circle cx="0" cy="520" r="500" />
+      <circle cx="0" cy="520" r="430" />
+      <circle cx="0" cy="520" r="360" />
+    </g>
+  </svg>
+  <div class="wrap">
+    <header class="sec-head">
+      <svg class="orn" aria-hidden="true"><use href="#i-rosette"/></svg>
+      <span class="sec-num" data-reveal>02</span>
+      <div class="sec-title">
+        <p class="sec-kicker" data-reveal style="--d:.05s">ABOUT</p>
+        <h2 data-reveal style="--d:.08s">关于 ovojiekou</h2>
+      </div>
+    </header>
+
+    <div class="about">
+      <div class="about-lead" data-reveal>
+        <p>山高万仞，<br />只登一步</p>
+        <span class="about-sign">写给自己的话</span>
+      </div>
+      <div class="about-body board">
+        <article class="fact" data-reveal style="--d:.05s">
+          <span class="f-num">01</span>
+          <h3>为什么写代码</h3>
+          <p>最早是想让电脑替我重复那些不想做的事。后来发现，能把脑子里的东西变成真能跑起来的东西，这件事本身就很上头。</p>
+        </article>
+        <article class="fact" data-reveal style="--d:.1s">
+          <span class="f-num">02</span>
+          <h3>为什么开始刷题</h3>
+          <p>光看书不够，得让手指记住。vjudge 上的题杂，正好补上教材里没有的那部分。</p>
+        </article>
+        <article class="fact" data-reveal style="--d:.15s">
+          <span class="f-num">03</span>
+          <h3>现在的状态</h3>
+          <p>课不少，时间被切成碎片。学得不算快，但每个新东西都会自己动手写一遍。比起收藏教程，我更相信「跑起来再说」。</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="road">
+  <div class="wrap">
+    <header class="sec-head">
+      <svg class="orn" aria-hidden="true"><use href="#i-rosette"/></svg>
+      <span class="sec-num" data-reveal>03</span>
+      <div class="sec-title">
+        <p class="sec-kicker" data-reveal style="--d:.05s">TRACK</p>
+        <h2 data-reveal style="--d:.08s">走到哪一步了</h2>
+      </div>
+    </header>
+
+    <div class="board">
+    <ol class="timeline">
+      <li data-reveal>
+        <span class="t-year">2026<span>.08</span></span>
+        <div class="t-body">
+          <h3>开始学 C 语言</h3>
+          <p>从第一行 Hello World 开始，变量、循环、数组、函数一个个过。指针看得最慢，但至少知道它为什么存在了。</p>
+        </div>
+      </li>
+      <li data-reveal style="--d:.05s">
+        <span class="t-year">2026<span>.09</span></span>
+        <div class="t-body">
+          <h3>进入大学</h3>
+          <p>第一次一个人生活，第一次自己安排一整天。军训、上课、社团招新挤在半个月里，事情比想象中多。</p>
+        </div>
+      </li>
+      <li class="is-now" data-reveal style="--d:.1s">
+        <span class="t-year">2026<span>.10</span></span>
+        <div class="t-body">
+          <h3>这个页面</h3>
+          <p>手写 HTML 和 CSS，不引任何第三方库。想把「我是谁」这件事，用一个能打开的链接说清楚。</p>
+        </div>
+      </li>
+    </ol>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="likes">
+  <div class="wrap">
+    <header class="sec-head">
+      <svg class="orn" aria-hidden="true"><use href="#i-rosette"/></svg>
+      <span class="sec-num" data-reveal>04</span>
+      <div class="sec-title">
+        <p class="sec-kicker" data-reveal style="--d:.05s">NOW PLAYING</p>
+        <h2 data-reveal style="--d:.08s">最近在听</h2>
+      </div>
+    </header>
+
+    <div class="listening">
+      <aside class="listen-note" data-reveal>
+        <div class="disc" aria-hidden="true"></div>
+        <p class="listen-kicker">ON REPEAT — VOL. 01</p>
+        <p class="listen-copy">最近耳机里反复出现的四首。没有排名，只有先后。</p>
+        <dl class="listen-stats">
+          <div><dt>TRACKS</dt><dd>04</dd></div>
+          <div><dt>RUNTIME</dt><dd>14:25</dd></div>
+        </dl>
+      </aside>
+
+      <div class="track-board board" data-reveal style="--d:.08s">
+        <div class="track-head" aria-hidden="true">
+          <span>最近播放</span>
+          <span>场景 / 时长</span>
+        </div>
+        <ol class="track-list">
+          <li>
+            <span class="p-num">01</span>
+            <span class="t-name">Chronicle A</span>
+            <span class="t-tag">写代码</span>
+            <span class="p-note">03:06</span>
+          </li>
+          <li>
+            <span class="p-num">02</span>
+            <span class="t-name">循迹</span>
+            <span class="t-tag">深夜</span>
+            <span class="p-note">03:18</span>
+          </li>
+          <li>
+            <span class="p-num">03</span>
+            <span class="t-name">愿戴荣光坠入天渊</span>
+            <span class="t-tag">通勤</span>
+            <span class="p-note">03:49</span>
+          </li>
+          <li>
+            <span class="p-num">04</span>
+            <span class="t-name">雨の日の図書館</span>
+            <span class="t-tag">放空</span>
+            <span class="p-note">04:12</span>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contact">
+  <svg class="arcs arcs-r" viewBox="0 0 520 520" aria-hidden="true" focusable="false">
+    <g fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke">
+      <circle cx="520" cy="520" r="500" />
+      <circle cx="520" cy="520" r="430" />
+      <circle cx="520" cy="520" r="360" />
+    </g>
+  </svg>
+  <div class="wrap">
+    <header class="sec-head">
+      <svg class="orn" aria-hidden="true"><use href="#i-rosette"/></svg>
+      <span class="sec-num" data-reveal>05</span>
+      <div class="sec-title">
+        <p class="sec-kicker" data-reveal style="--d:.05s">CONTACT</p>
+        <h2 data-reveal style="--d:.08s">说点什么</h2>
+      </div>
+    </header>
+
+    <a class="big-mail" href="mailto:ovojiekou@gmail.com" data-reveal>
+      <span>ovojiekou@gmail.com</span>
+      <svg class="i"><use href="#i-arrow-up"/></svg>
+    </a>
+
+    <div class="board contact-board">
+    <ul class="contact-list">
+      <li data-reveal style="--d:.05s">
+        <span class="c-label">GITHUB</span>
+        <a class="c-value" href="https://github.com/ovojiekou" target="_blank" rel="noopener">@ovojiekou</a>
+        <span class="c-mark">↗</span>
+      </li>
+      <li data-reveal style="--d:.1s">
+        <span class="c-label">SOURCE</span>
+        <a class="c-value" href="https://github.com/ovojiekou/ovojiekou.github.io" target="_blank" rel="noopener">ovojiekou.github.io</a>
+        <span class="c-mark">↗</span>
+      </li>
+    </ul>
+    </div>
+
+    <p class="contact-note" data-reveal style="--d:.25s">
+      如果你也在做点小东西，我们大概率聊得来。
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <span>© <span id="year">2026</span> ovojiekou</span>
+    <span>手写 HTML / CSS · GitHub Pages</span>
+  </div>
+</footer>
+
+<button class="totop" id="toTop" type="button" aria-label="回到顶部">
+  <svg class="i"><use href="#i-up"/></svg>
+</button>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
