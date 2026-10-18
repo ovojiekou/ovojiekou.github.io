@@ -490,6 +490,12 @@ button { font: inherit; color: inherit; }
   place-items: center;
 }
 
+.print-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 386px;
+}
+
 .print {
   position: relative;
   width: 100%;
@@ -499,6 +505,28 @@ button { font: inherit; color: inherit; }
   transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1);
 }
 .print:hover { transform: rotate(0deg) translateY(-8px); }
+
+.hero-cat {
+  position: absolute;
+  right: -46px;
+  bottom: -104px;
+  width: 132px;
+  height: 132px;
+  color: var(--text);
+  opacity: 0.86;
+  pointer-events: none;
+  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+.print-wrap:hover .hero-cat { transform: translateY(-4px) rotate(-1deg); }
+.hero-cat .cat-tail {
+  transform-box: fill-box;
+  transform-origin: 5% 90%;
+  animation: cat-tail 4.2s ease-in-out infinite;
+}
+@keyframes cat-tail {
+  0%, 100% { transform: rotate(-1.5deg); }
+  50% { transform: rotate(4deg); }
+}
 
 .print-side {
   position: absolute;
@@ -849,6 +877,18 @@ button { font: inherit; color: inherit; }
   width: 28px;
   height: 1px;
   background: var(--dim-2);
+}
+.paw {
+  width: 12px;
+  height: 12px;
+  flex: none;
+  fill: currentColor;
+}
+.about-sign .paw {
+  width: 11px;
+  height: 11px;
+  color: var(--dim-2);
+  opacity: 0.8;
 }
 
 .fact {
@@ -1263,6 +1303,16 @@ a.c-value:hover { color: var(--brass); }
   letter-spacing: 0.18em;
   color: var(--dim-2);
 }
+.foot-cat {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.foot-cat .paw {
+  width: 12px;
+  height: 12px;
+  opacity: 0.8;
+}
 
 /* ---- utility controls ---- */
 .totop {
@@ -1333,6 +1383,8 @@ a.c-value:hover { color: var(--brass); }
   }
   .hero-side { order: -1; justify-items: start; }
   .print { max-width: 300px; }
+  .print-wrap { max-width: 300px; }
+  .hero-cat { right: -28px; bottom: -62px; width: 88px; height: 88px; }
   .scroll-cue { display: none; }
   .hero { padding: 132px 0 96px; min-height: 0; }
   .about { grid-template-columns: 1fr; gap: 48px; }
@@ -1386,6 +1438,8 @@ a.c-value:hover { color: var(--brass); }
   .meta { grid-template-columns: 1fr 1fr; gap: 18px; }
   .hero { padding-top: 116px; }
   .print { max-width: 250px; }
+  .print-wrap { max-width: 250px; }
+  .hero-cat { right: -46px; bottom: -48px; width: 72px; height: 72px; }
   .print-back { transform: translate(10px, 10px); }
   .print-side { display: none; }
   .big-mail { font-size: clamp(1.15rem, 6vw, 1.6rem); }
