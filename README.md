@@ -13,7 +13,7 @@ index.html               页面结构与文案
 assets/css/main.css      样式、配色、栅格
 assets/js/main.js        主题切换 / 滚动进场 / 一键复制
 assets/img/portrait.jpg  头像
-deploy.ps1               一键发布到 GitHub Pages
+assets/audio/*.m4a       最近在听的 30 秒试听片段
 ```
 
 ## 本地预览
@@ -42,7 +42,7 @@ python -m http.server 8080
 | 四个数字 | `#now` 里 `.figure-row` |
 | 「关于」三张卡 | `#about` 里 `.fact` |
 | 时间线 | `#road` 里 `<li>` |
-| 最近在听 | `#likes` 里 `.track-list` 的 `<li>` |
+| 最近在听 | `#likes` 里 `.track-btn` 的文案、`data-src` 和 `data-link` |
 | 联系方式 | `#contact` 里 `.big-mail` 和 `.contact-list` |
 
 换头像：把新图片命名为 `portrait.jpg` 放进 `assets/img/` 覆盖即可（正方形效果最好）。
@@ -62,35 +62,21 @@ python -m http.server 8080
 默认是暖纸白（`data-theme="light"`），深色是第二套主题；
 两套配色分别写在 `:root` 和 `[data-theme="light"]` 里，点右上角按钮切换。
 
-## 发布到 GitHub Pages
+## 更新线上页面
 
-仓库名必须是 `<用户名>.github.io`，地址才是 `https://<用户名>.github.io/`。
+仓库已经发布在 <https://github.com/ovojiekou/ovojiekou.github.io>，
+线上地址是 <https://ovojiekou.github.io/>。
 
-### 方式一：脚本（推荐）
-
-1. 到 GitHub → Settings → Developer settings → Personal access tokens 生成一个
-   带 `repo` 权限的 classic token（或 fine-grained：Contents / Pages / Administration 读写）。
-2. 在本目录打开 PowerShell：
-
-```powershell
-.\deploy.ps1 -User 你的用户名 -Token 你的token
-```
-
-脚本会建仓库、提交、推送、开启 Pages，最后打印网址。跑完记得撤销 token。
-
-### 方式二：手动
+改完 `index.html` 或 `assets/` 后，在本目录执行：
 
 ```bash
-git init
 git add .
-git commit -m "feat: personal homepage"
-git branch -M main
-git remote add origin https://github.com/<用户名>/<用户名>.github.io.git
-git push -u origin main
+git commit -m "update homepage"
+git push
 ```
 
-然后在仓库 **Settings → Pages**：Source 选 `Deploy from a branch`，
-Branch 选 `main`，目录 `/ (root)`，保存。
+GitHub Pages 会自动重新构建，通常 1–2 分钟后生效。
+首次推送如果提示登录，按 Git Credential Manager 的提示登录 GitHub 即可。
 
 ## 细节
 
@@ -98,3 +84,4 @@ Branch 选 `main`，目录 `/ (root)`，保存。
 - 深色 / 浅色两套主题，选择记在本地。
 - 滚动进场动画会尊重系统的「减少动态效果」设置。
 - 联系方式一键复制；打印时自动隐藏导航与装饰。
+- 最近在听使用 30 秒官方试听片段，点击曲目即可播放/暂停；完整版链接到 Apple Music。
