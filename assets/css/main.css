@@ -1106,9 +1106,7 @@ button { font: inherit; color: inherit; }
     radial-gradient(circle at 34% 28%, #35353a, #0c0c0e 64%);
   box-shadow: 0 34px 60px -34px rgba(0, 0, 0, 0.9);
   animation: spin 42s linear infinite;
-  animation-play-state: paused;
 }
-.listening.is-playing .disc { animation-play-state: running; }
 .disc::before {
   content: "";
   position: absolute;
@@ -1163,7 +1161,7 @@ button { font: inherit; color: inherit; }
   line-height: 1;
   font-variant-numeric: lining-nums;
 }
-.track-board.board { padding: 26px 40px 8px 64px; }
+.track-board.board { padding: 26px 40px 14px 64px; }
 .track-head {
   display: flex;
   justify-content: space-between;
@@ -1228,24 +1226,6 @@ button { font: inherit; color: inherit; }
   color: var(--text);
   border-color: var(--text);
 }
-.track-btn.is-playing .play-ic {
-  background: var(--text);
-  border-color: var(--text);
-  color: var(--bg);
-}
-.track-btn.is-playing .play-ic::before {
-  width: 2px;
-  height: 10px;
-  margin: 0 2px 0 0;
-  border: 0;
-  background: currentColor;
-}
-.track-btn.is-playing .play-ic::after {
-  content: "";
-  width: 2px;
-  height: 10px;
-  background: currentColor;
-}
 .p-num {
   font-family: var(--mono);
   font-size: 9.5px;
@@ -1271,8 +1251,17 @@ button { font: inherit; color: inherit; }
   letter-spacing: 0.02em;
   color: var(--dim-2);
 }
-.track-btn:hover .t-name,
-.track-btn.is-playing .t-name { color: var(--brass); }
+.track-btn:hover .t-name { color: var(--brass); }
+.t-ext {
+  font-size: 10px;
+  color: var(--dim-2);
+  opacity: 0.55;
+  transition: color 0.3s, opacity 0.3s;
+}
+.track-btn:hover .t-ext {
+  color: var(--brass);
+  opacity: 1;
+}
 .t-tag {
   justify-self: end;
   padding: 3px 8px;
@@ -1295,28 +1284,6 @@ button { font: inherit; color: inherit; }
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-.track-foot {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px 20px;
-  margin: 0;
-  padding: 16px 0 14px;
-  border-top: 1px solid var(--line);
-  font-family: var(--mono);
-  font-size: 8.5px;
-  letter-spacing: 0.12em;
-  color: var(--dim-2);
-}
-.track-foot a {
-  padding-bottom: 2px;
-  border-bottom: 1px solid var(--line-2);
-  color: var(--dim);
-  transition: color 0.25s;
-}
-.track-foot a:hover { color: var(--text); }
-
 /* ---- contact ---- */
 .big-mail {
   display: flex;
@@ -1519,7 +1486,7 @@ a.c-value:hover { color: var(--brass); }
   .wrap,
   .hero-inner { width: calc(100% - 48px); }
   .board { padding: 6px 20px; }
-  .track-board.board { padding: 20px 20px 4px; }
+  .track-board.board { padding: 20px 20px 14px; }
   .contact-board { padding: 6px 20px; }
   .row {
     grid-template-columns: 40px 1fr auto;

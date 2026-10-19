@@ -13,7 +13,6 @@ index.html               页面结构与文案
 assets/css/main.css      样式、配色、栅格
 assets/js/main.js        主题切换 / 滚动进场 / 一键复制
 assets/img/portrait.jpg  头像
-assets/audio/*.m4a       最近在听的 30 秒试听片段
 ```
 
 ## 本地预览
@@ -42,7 +41,7 @@ python -m http.server 8080
 | 四个数字 | `#now` 里 `.figure-row` |
 | 「关于」三张卡 | `#about` 里 `.fact` |
 | 时间线 | `#road` 里 `<li>` |
-| 最近在听 | `#likes` 里 `.track-btn` 的文案、`data-src` 和 `data-link` |
+| 最近在听 | `#likes` 里 `.track-btn` 的文案和 `href` |
 | 联系方式 | `#contact` 里 `.big-mail` 和 `.contact-list` |
 
 换头像：把新图片命名为 `portrait.jpg` 放进 `assets/img/` 覆盖即可（正方形效果最好）。
@@ -84,7 +83,7 @@ GitHub Pages 会自动重新构建，通常 1–2 分钟后生效。
 - 深色 / 浅色两套主题，选择记在本地。
 - 滚动进场动画会尊重系统的「减少动态效果」设置。
 - 联系方式一键复制；打印时自动隐藏导航与装饰。
-- 最近在听使用 30 秒官方试听片段，点击曲目即可播放/暂停；完整版链接到 Apple Music。
+- 最近在听点击曲目会跳转到对应的 Apple Music 页面。
 - 小猫线稿、爪印和猫头 favicon 作为页面的小彩蛋。
 - 首屏飘落的枫叶、猫身边的落叶和「2026 秋」构成轻量的秋天主题。
 - 右上角昼夜切换带一个自动出现的小猫爪提示，点提示本身也能切换。
